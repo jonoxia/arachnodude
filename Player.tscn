@@ -1,0 +1,230 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://spider_aurora_36.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://spider_aurora_36-sheet.png" type="Texture" id=3]
+[ext_resource path="res://sfx/Sword Whip 1 - QuickSounds.com.mp3" type="AudioStream" id=4]
+[ext_resource path="res://sfx/tap.mp3" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 18 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 684, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 576, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 36, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 108, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 756, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 612, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 504, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 180, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 1 )
+region = Rect2( 216, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 1 )
+region = Rect2( 252, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 720, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 324, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 396, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 432, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 468, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 504, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 1 )
+region = Rect2( 540, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 1 )
+region = Rect2( 396, 0, 36, 36 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "jump left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "ceiling left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "walk right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "stand down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "ceiling right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "idle climb right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "walk left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ) ],
+"loop": true,
+"name": "jump right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "climb left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "climb right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "idle climb left",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 25 )
+animation = "idle climb right"
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="LeftArmLine" type="Line2D" parent="."]
+position = Vector2( -5, 0 )
+z_index = 2
+points = PoolVector2Array( -15, -1, -4, -1 )
+width = 3.0
+default_color = Color( 1, 0.976471, 0.4, 1 )
+
+[node name="LeftOutline" type="Line2D" parent="LeftArmLine"]
+z_index = -1
+points = PoolVector2Array( -4, -1, -17, -1 )
+width = 5.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="RightArmLine" type="Line2D" parent="."]
+position = Vector2( 6, 0 )
+z_index = 8
+points = PoolVector2Array( 7, -1, -4, -1 )
+width = 3.0
+default_color = Color( 1, 0.976471, 0.4, 1 )
+
+[node name="RightOutline" type="Line2D" parent="RightArmLine"]
+z_index = -1
+points = PoolVector2Array( -3, -1, 10, -1 )
+width = 5.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="LeftRayCast" type="RayCast2D" parent="."]
+position = Vector2( -15, 7 )
+enabled = true
+cast_to = Vector2( -10, 0 )
+collide_with_areas = true
+
+[node name="RightRayCast" type="RayCast2D" parent="."]
+position = Vector2( 15, 7 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+collide_with_areas = true
+
+[node name="ThwipSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ThunkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -20.0
+margin_top = -44.0
+margin_right = 20.0
+margin_bottom = -4.0
+text = "yo mama"
+__meta__ = {
+"_edit_use_anchors_": false
+}

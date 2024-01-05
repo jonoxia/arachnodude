@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Title Screen.gd" type="Script" id=1]
+
+[node name="Title Screen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 81.0
+margin_top = 27.0
+margin_right = 234.0
+margin_bottom = 54.0
+text = "Spider Aurora"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 99.0
+margin_top = 54.0
+margin_right = 225.0
+margin_bottom = 72.0
+text = "Saves"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 90.0
+margin_top = 81.0
+margin_right = 216.0
+margin_bottom = 99.0
+text = "The Cat"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial Button" type="Button" parent="."]
+margin_left = 81.0
+margin_top = 117.0
+margin_right = 141.0
+margin_bottom = 137.0
+text = "Tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="First Level Button" type="Button" parent="."]
+margin_left = 144.0
+margin_top = 117.0
+margin_right = 222.0
+margin_bottom = 137.0
+text = "Level 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Tutorial Button" to="." method="_on_Tutorial_Button_pressed"]
+[connection signal="pressed" from="First Level Button" to="." method="_on_First_Level_Button_pressed"]

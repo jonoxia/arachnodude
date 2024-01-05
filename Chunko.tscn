@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters_packed.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 9.0
+
+[node name="Chunko" type="RigidBody2D"]
+mass = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192.441, -0.407354, 23.7036, 23.8892 )

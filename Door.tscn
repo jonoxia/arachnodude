@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tiles_packed.png" type="Texture" id=1]
+[ext_resource path="res://Door.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.254, 30.586 )
+
+[node name="Door" type="Area2D"]
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0898318, -24.1213 )
+scale = Vector2( 2.02805, 2.01308 )
+z_index = -2
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 180, 102.531, 18.8056, 24.4689 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.179642, -30.1997 )
+shape = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -38.839
+margin_top = -62.3381
+margin_right = 69.161
+margin_bottom = -33.3381
+custom_colors/default_color = Color( 1, 0.980392, 0, 1 )
+text = "YOU DID IT!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
